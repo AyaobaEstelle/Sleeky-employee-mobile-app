@@ -1,34 +1,26 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { Tabs } from "expo-router";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: "red" }}>
       <Tabs.Screen
-        name="index"
+        name="sign-up"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+          title: "Sign Up",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="sign-in" size={24} color="black" />
           ),
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="login"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          title: "Login",
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="login" size={24} color="black" />
           ),
         }}
       />

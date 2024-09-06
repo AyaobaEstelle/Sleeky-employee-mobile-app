@@ -125,7 +125,8 @@ export default function EmployeeForm() {
               <Text style={styles.label}>Education Level</Text>
               <Picker style={styles.input}>
                 <Picker.Item label="High School" value="highschool" />
-                <Picker.Item label="Associate's Degree" value="associate" />
+                <Picker.Item label="ND" value="nd" />
+                <Picker.Item label="HND" value="hnd" />
                 <Picker.Item label="Bachelor's Degree" value="bachelor" />
                 <Picker.Item label="Master's Degree" value="master" />
                 <Picker.Item label="Doctorate" value="doctorate" />
@@ -159,11 +160,11 @@ const styles = StyleSheet.create({
   scrollContainer: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 25,
+    padding: 20,
   },
   card: {
     width: "80%",
-    padding: 25,
+    padding: 15,
     backgroundColor: "#fff",
   },
   header: {

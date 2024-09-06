@@ -20,7 +20,7 @@ export default function SignUp() {
         </Text>
         <View style={styles.inputRow}>
           <TextInput
-            style={[styles.input, { marginRight: 10 }]}
+            style={styles.input}
             placeholder="First Name"
             placeholderTextColor="#555"
           />
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     maxWidth: 500,
     backgroundColor: "ffff",
     borderRadius: 12,
-    padding: 25,
+    padding: 20,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
@@ -94,11 +94,13 @@ const styles = StyleSheet.create({
   },
   inputRow: {
     flexDirection: "row",
+    gap: 10,
     marginBottom: 15,
   },
   input: {
     flex: 1,
     height: 50,
+    width: "20%",
     borderColor: "#000",
     borderWidth: 1,
     borderRadius: 5,

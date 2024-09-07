@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { Button, Card, Title } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
-import { fonts } from "@/utils/fonts";
 import { Link } from "expo-router";
 
 export default function EmployeeForm() {
@@ -137,13 +136,6 @@ export default function EmployeeForm() {
                 <Text style={styles.submitButtonText}>Sign Up</Text>
               </Pressable>
             </Link>
-            {/* <Button
-              mode="contained"
-              style={styles.submitButton}
-              // onPress={() => console.log("Form submitted")}
-            >
-              Submit
-            </Button> */}
           </Card.Content>
         </Card>
       </ScrollView>
@@ -160,11 +152,11 @@ const styles = StyleSheet.create({
   scrollContainer: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
+    padding: 10,
   },
   card: {
-    width: "80%",
-    padding: 15,
+    width: "100%",
+    padding: 10,
     backgroundColor: "#fff",
   },
   header: {
@@ -172,7 +164,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 10,
     color: "#000",
-    fontFamily: fonts.Bold,
+    fontFamily: "poppins-bold",
+    fontWeight: "bold",
   },
   subheading: {
     textAlign: "center",
@@ -180,7 +173,7 @@ const styles = StyleSheet.create({
     color: "#000",
     marginBottom: 15,
     textTransform: "capitalize",
-    fontFamily: fonts.Regular,
+    fontFamily: "poppins-medium",
   },
   inputContainer: {
     marginBottom: 20,
@@ -189,7 +182,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 8,
     color: "#000",
-    fontFamily: fonts.Regular,
+    fontFamily: "poppins-light",
   },
   input: {
     backgroundColor: "#fff",
@@ -197,7 +190,7 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     borderWidth: 1,
     borderRadius: 4,
-    fontFamily: fonts.Light,
+    fontFamily: "poppins-light",
   },
   submitButton: {
     width: "100%",
@@ -210,8 +203,8 @@ const styles = StyleSheet.create({
   },
   submitButtonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
-    fontFamily: fonts.Regular,
+    fontFamily: "poppins-bold",
   },
 });

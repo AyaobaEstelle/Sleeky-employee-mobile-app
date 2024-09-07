@@ -1,14 +1,6 @@
-import { fonts } from "@/utils/fonts";
 import { Link } from "expo-router";
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Pressable,
-} from "react-native";
+import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
 
 export default function Login() {
   return (
@@ -56,30 +48,29 @@ const styles = StyleSheet.create({
   },
   card: {
     width: "100%",
-    maxWidth: 400,
+    maxWidth: 500,
     backgroundColor: "ffff",
     borderRadius: 12,
-    padding: 25,
+    padding: 20,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     shadowRadius: 5,
   },
   header: {
-    fontSize: 29,
+    fontSize: 30,
     fontWeight: "bold",
     color: "#000",
     textAlign: "center",
     marginBottom: 15,
-    fontFamily: fonts.Bold,
+    fontFamily: "poppins-bold",
   },
   subHeader: {
     fontSize: 14,
     color: "#000",
     textAlign: "center",
     marginBottom: 20,
-    textTransform: "capitalize",
-    fontFamily: fonts.Regular,
+    fontFamily: "poppins-medium",
   },
   input: {
     width: "100%",
@@ -90,7 +81,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     color: "#000",
     marginBottom: 15,
-    fontFamily: fonts.Light,
+    fontFamily: "poppins-light",
   },
   loginButton: {
     width: "100%",
@@ -103,14 +94,14 @@ const styles = StyleSheet.create({
   },
   loginButtonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
-    fontFamily: fonts.Regular,
+    fontFamily: "poppins-bold",
   },
   footerText: {
     color: "#000",
     textAlign: "center",
     marginTop: 15,
-    fontFamily: fonts.Light,
+    fontFamily: "poppins-light",
   },
 });

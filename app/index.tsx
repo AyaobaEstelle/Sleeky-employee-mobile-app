@@ -1,13 +1,7 @@
 import { Link, Stack, useNavigation } from "expo-router";
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Pressable,
-} from "react-native";
-import { fonts } from "../utils/fonts";
+import { Text, View, StyleSheet, Pressable } from "react-native";
 import { useEffect } from "react";
+
 export default function Home() {
   const navigation = useNavigation();
 
@@ -31,10 +25,14 @@ export default function Home() {
       <Text style={styles.subHeadingText}>Employee Details</Text>
       <View style={styles.homeButton}>
         <Link href="/(tabs)/sign-up">
-          <Pressable style={styles.homeButtonText}>Add Employee</Pressable>
+          <Pressable style={styles.homeButtonText}>
+            <Text>Add Employee</Text>
+          </Pressable>
         </Link>
         <Link href="/#">
-          <Pressable style={styles.homeButtonText}>View Employees</Pressable>
+          <Pressable style={styles.homeButtonText}>
+            <Text>View Employees</Text>
+          </Pressable>
         </Link>
       </View>
     </View>
@@ -48,16 +46,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   headingText: {
-    fontSize: 35,
+    fontSize: 40,
     fontWeight: "bold",
     marginBottom: 15,
-    fontFamily: fonts.Bold,
+    fontFamily: "PoppinsBold",
   },
   subHeadingText: {
     fontSize: 25,
     fontWeight: "bold",
     marginBottom: 10,
-    fontFamily: fonts.Medium,
+    fontFamily: "PoppinsMedium",
   },
   homeButton: {
     flexDirection: "row",
@@ -74,6 +72,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#45484A",
     color: "white",
     fontWeight: "bold",
-    fontFamily: fonts.Regular,
+    fontFamily: "PoppingsLight",
   },
 });

@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { Button, Card, Title } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
-import { fonts } from "@/utils/fonts";
 import { Link } from "expo-router";
 
 export default function EmployeeForm() {
@@ -125,7 +124,8 @@ export default function EmployeeForm() {
               <Text style={styles.label}>Education Level</Text>
               <Picker style={styles.input}>
                 <Picker.Item label="High School" value="highschool" />
-                <Picker.Item label="Associate's Degree" value="associate" />
+                <Picker.Item label="ND" value="nd" />
+                <Picker.Item label="HND" value="hnd" />
                 <Picker.Item label="Bachelor's Degree" value="bachelor" />
                 <Picker.Item label="Master's Degree" value="master" />
                 <Picker.Item label="Doctorate" value="doctorate" />
@@ -136,13 +136,6 @@ export default function EmployeeForm() {
                 <Text style={styles.submitButtonText}>Sign Up</Text>
               </Pressable>
             </Link>
-            {/* <Button
-              mode="contained"
-              style={styles.submitButton}
-              // onPress={() => console.log("Form submitted")}
-            >
-              Submit
-            </Button> */}
           </Card.Content>
         </Card>
       </ScrollView>
@@ -159,11 +152,11 @@ const styles = StyleSheet.create({
   scrollContainer: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 25,
+    padding: 10,
   },
   card: {
-    width: "80%",
-    padding: 25,
+    width: "100%",
+    padding: 10,
     backgroundColor: "#fff",
   },
   header: {
@@ -171,7 +164,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 10,
     color: "#000",
-    fontFamily: fonts.Bold,
+    fontFamily: "PoppinsBold",
   },
   subheading: {
     textAlign: "center",
@@ -179,7 +172,7 @@ const styles = StyleSheet.create({
     color: "#000",
     marginBottom: 15,
     textTransform: "capitalize",
-    fontFamily: fonts.Regular,
+    fontFamily: "PoppinsMedium",
   },
   inputContainer: {
     marginBottom: 20,
@@ -188,7 +181,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 8,
     color: "#000",
-    fontFamily: fonts.Regular,
+    fontFamily: "PoppinsLight",
   },
   input: {
     backgroundColor: "#fff",
@@ -196,7 +189,7 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     borderWidth: 1,
     borderRadius: 4,
-    fontFamily: fonts.Light,
+    fontFamily: "PoppinsLight",
   },
   submitButton: {
     width: "100%",
@@ -209,8 +202,8 @@ const styles = StyleSheet.create({
   },
   submitButtonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
-    fontFamily: fonts.Regular,
+    fontFamily: "PoppinsBold",
   },
 });

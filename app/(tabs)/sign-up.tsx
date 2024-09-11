@@ -1,14 +1,6 @@
-import { fonts } from "@/utils/fonts";
 import { Link } from "expo-router";
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Pressable,
-} from "react-native";
+import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
 
 export default function SignUp() {
   return (
@@ -20,7 +12,7 @@ export default function SignUp() {
         </Text>
         <View style={styles.inputRow}>
           <TextInput
-            style={[styles.input, { marginRight: 10 }]}
+            style={styles.input}
             placeholder="First Name"
             placeholderTextColor="#555"
           />
@@ -70,41 +62,42 @@ const styles = StyleSheet.create({
     maxWidth: 500,
     backgroundColor: "ffff",
     borderRadius: 12,
-    padding: 25,
+    padding: 20,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     shadowRadius: 5,
   },
   header: {
-    fontSize: 29,
     fontWeight: "bold",
     color: "#000",
     textAlign: "center",
     marginBottom: 15,
-    fontFamily: fonts.Bold,
+    fontFamily: "PoppinsBold",
+    fontSize: 30,
   },
   subHeader: {
     fontSize: 14,
     color: "#000",
     textAlign: "center",
     marginBottom: 20,
-    textTransform: "capitalize",
-    fontFamily: fonts.Regular,
+    fontFamily: "PoppinsMedium",
   },
   inputRow: {
     flexDirection: "row",
+    gap: 10,
     marginBottom: 15,
   },
   input: {
     flex: 1,
     height: 50,
+    width: "20%",
     borderColor: "#000",
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
     color: "#000",
-    fontFamily: fonts.Light,
+    fontFamily: "PoppinsLight",
   },
   inputFullWidth: {
     width: "100%",
@@ -115,6 +108,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     color: "#000",
     marginBottom: 15,
+    fontFamily: "PoppinsLight",
   },
   signUpButton: {
     width: "100%",
@@ -127,14 +121,14 @@ const styles = StyleSheet.create({
   },
   signUpButtonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
-    fontFamily: fonts.Regular,
+    fontFamily: "PoppinsBold",
   },
   footerText: {
     color: "#000",
     textAlign: "center",
     marginTop: 15,
-    fontFamily: fonts.Light,
+    fontFamily: "PoppinsLight",
   },
 });

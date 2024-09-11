@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     color: "#000",
     textAlign: "center",
     marginBottom: 15,
-    fontFamily: "poppins-bold",
   },
   subHeader: {
     fontSize: 14,

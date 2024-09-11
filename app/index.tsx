@@ -24,10 +24,14 @@ export default function Home() {
       <Text style={styles.subHeadingText}>Employee Details</Text>
       <View style={styles.homeButton}>
         <Link href="/(tabs)/sign-up">
-          <Pressable style={styles.homeButtonText}>Add Employee</Pressable>
+          <Pressable style={styles.homeButtonText}>
+            <Text>Add Employee</Text>
+          </Pressable>
         </Link>
         <Link href="/#">
-          <Pressable style={styles.homeButtonText}>View Employees</Pressable>
+          <Pressable style={styles.homeButtonText}>
+            <Text>View Employees</Text>
+          </Pressable>
         </Link>
       </View>
     </View>

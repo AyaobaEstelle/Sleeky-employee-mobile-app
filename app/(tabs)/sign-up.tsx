@@ -6,8 +6,17 @@ export default function SignUp() {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.header}>Sign Up</Text>
-        <Text style={styles.subHeader}>
+        <Text
+          style={[styles.header, { fontFamily: "Inter-Bold", fontSize: 30 }]}
+        >
+          Sign Up
+        </Text>
+        <Text
+          style={[
+            styles.subHeader,
+            { fontFamily: "Poppins-Medium", fontSize: 15 },
+          ]}
+        >
           Enter your information to create an account
         </Text>
         <View style={styles.inputRow}>
@@ -69,19 +78,16 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
   },
   header: {
-    fontSize: 30,
     fontWeight: "bold",
     color: "#000",
     textAlign: "center",
     marginBottom: 15,
-    fontFamily: "poppins-bold",
   },
   subHeader: {
     fontSize: 14,
     color: "#000",
     textAlign: "center",
     marginBottom: 20,
-    fontFamily: "poppins-medium",
   },
   inputRow: {
     flexDirection: "row",

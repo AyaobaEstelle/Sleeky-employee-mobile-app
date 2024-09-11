@@ -164,8 +164,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 10,
     color: "#000",
-    fontFamily: "poppins-bold",
-    fontWeight: "bold",
+    fontFamily: "PoppinsBold",
   },
   subheading: {
     textAlign: "center",
@@ -173,7 +172,7 @@ const styles = StyleSheet.create({
     color: "#000",
     marginBottom: 15,
     textTransform: "capitalize",
-    fontFamily: "poppins-medium",
+    fontFamily: "PoppinsMedium",
   },
   inputContainer: {
     marginBottom: 20,
@@ -182,7 +181,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 8,
     color: "#000",
-    fontFamily: "poppins-light",
+    fontFamily: "PoppinsLight",
   },
   input: {
     backgroundColor: "#fff",
@@ -190,7 +189,7 @@ const styles = StyleSheet.create({
     borderColor: "#000",
     borderWidth: 1,
     borderRadius: 4,
-    fontFamily: "poppins-light",
+    fontFamily: "PoppinsLight",
   },
   submitButton: {
     width: "100%",
@@ -205,6 +204,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
-    fontFamily: "poppins-bold",
+    fontFamily: "PoppinsBold",
   },
 });

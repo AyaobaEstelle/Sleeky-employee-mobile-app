@@ -6,17 +6,8 @@ export default function SignUp() {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text
-          style={[styles.header, { fontFamily: "Inter-Bold", fontSize: 30 }]}
-        >
-          Sign Up
-        </Text>
-        <Text
-          style={[
-            styles.subHeader,
-            { fontFamily: "Poppins-Medium", fontSize: 15 },
-          ]}
-        >
+        <Text style={styles.header}>Sign Up</Text>
+        <Text style={styles.subHeader}>
           Enter your information to create an account
         </Text>
         <View style={styles.inputRow}>
@@ -82,12 +73,15 @@ const styles = StyleSheet.create({
     color: "#000",
     textAlign: "center",
     marginBottom: 15,
+    fontFamily: "PoppinsBold",
+    fontSize: 30,
   },
   subHeader: {
     fontSize: 14,
     color: "#000",
     textAlign: "center",
     marginBottom: 20,
+    fontFamily: "PoppinsMedium",
   },
   inputRow: {
     flexDirection: "row",
@@ -103,7 +97,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     color: "#000",
-    fontFamily: "poppins-light",
+    fontFamily: "PoppinsLight",
   },
   inputFullWidth: {
     width: "100%",
@@ -114,7 +108,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     color: "#000",
     marginBottom: 15,
-    fontFamily: "poppins-light",
+    fontFamily: "PoppinsLight",
   },
   signUpButton: {
     width: "100%",
@@ -129,12 +123,12 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
-    fontFamily: "poppins-bold",
+    fontFamily: "PoppinsBold",
   },
   footerText: {
     color: "#000",
     textAlign: "center",
     marginTop: 15,
-    fontFamily: "poppins-light",
+    fontFamily: "PoppinsLight",
   },
 });

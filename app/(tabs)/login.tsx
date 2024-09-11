@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 30,
     fontWeight: "bold",
+    fontFamily: "PoppinsBold",
     color: "#000",
     textAlign: "center",
     marginBottom: 15,
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
     color: "#000",
     textAlign: "center",
     marginBottom: 20,
-    fontFamily: "poppins-medium",
+    fontFamily: "PoppinsMedium",
   },
   input: {
     width: "100%",
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     color: "#000",
     marginBottom: 15,
-    fontFamily: "poppins-light",
+    fontFamily: "PoppinsLight",
   },
   loginButton: {
     width: "100%",
@@ -95,12 +96,12 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
-    fontFamily: "poppins-bold",
+    fontFamily: "PoppinsBold",
   },
   footerText: {
     color: "#000",
     textAlign: "center",
     marginTop: 15,
-    fontFamily: "poppins-light",
+    fontFamily: "PoppinsLight",
   },
 });

@@ -1,6 +1,7 @@
 import { Link, Stack, useNavigation } from "expo-router";
 import { Text, View, StyleSheet, Pressable } from "react-native";
 import { useEffect } from "react";
+
 export default function Home() {
   const navigation = useNavigation();
 
@@ -48,13 +49,13 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: "bold",
     marginBottom: 15,
-    fontFamily: "poppins-bold",
+    fontFamily: "PoppinsBold",
   },
   subHeadingText: {
     fontSize: 25,
     fontWeight: "bold",
     marginBottom: 10,
-    fontFamily: "poppins-medium",
+    fontFamily: "PoppinsMedium",
   },
   homeButton: {
     flexDirection: "row",
@@ -71,6 +72,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#45484A",
     color: "white",
     fontWeight: "bold",
-    fontFamily: "poppins-light",
+    fontFamily: "PoppingsLight",
   },
 });

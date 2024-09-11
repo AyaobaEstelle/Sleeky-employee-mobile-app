@@ -24,16 +24,17 @@ export default function Home() {
       <Text style={styles.headingText}>Sleeky Programmers</Text>
       <Text style={styles.subHeadingText}>Employee Details</Text>
       <View style={styles.homeButton}>
-        <Link href="/(tabs)/sign-up">
-          <Pressable style={styles.homeButtonText}>
-            <Text>Add Employee</Text>
-          </Pressable>
-        </Link>
-        <Link href="/#">
-          <Pressable style={styles.homeButtonText}>
-            <Text>View Employees</Text>
-          </Pressable>
-        </Link>
+        <Pressable>
+          <Text style={styles.homeButtonText}>
+            <Link href="/(tabs)/sign-up">Add Employee</Link>
+          </Text>
+        </Pressable>
+
+        <Pressable>
+          <Text style={styles.homeButtonText}>
+            <Link href="/#">View Employees</Link>
+          </Text>
+        </Pressable>
       </View>
     </View>
   );
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   headingText: {
+    textAlign: "center",
     fontSize: 40,
     fontWeight: "bold",
     marginBottom: 15,
@@ -54,24 +56,21 @@ const styles = StyleSheet.create({
   subHeadingText: {
     fontSize: 25,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 15,
     fontFamily: "PoppinsMedium",
   },
   homeButton: {
     flexDirection: "row",
-    justifyContent: "center",
     alignItems: "center",
-    padding: 15,
-    gap: 30,
+    justifyContent: "center",
+    gap: 20,
   },
   homeButtonText: {
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: "#45484A",
-    padding: 12,
-    backgroundColor: "#45484A",
+    borderRadius: 7,
+    padding: 13,
     color: "white",
-    fontWeight: "bold",
+    backgroundColor: "black",
+    fontSize: 16,
     fontFamily: "PoppingsLight",
   },
 });

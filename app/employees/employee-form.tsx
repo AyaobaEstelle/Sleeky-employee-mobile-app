@@ -113,7 +113,7 @@ export default function EmployeeForm() {
               />
             </View>
             <View style={styles.inputContainer}>
-              <Text style={styles.label}>Birthday</Text>
+              <Text style={styles.label}>Date of Birth</Text>
               <TextInput
                 style={styles.input}
                 placeholder="mm/dd/yy"
@@ -121,8 +121,9 @@ export default function EmployeeForm() {
               />
             </View>
             <View style={styles.inputContainer}>
-              <Text style={styles.label}>Education Level</Text>
-              <Picker style={styles.input}>
+              <Text style={styles.label}>Educational Level</Text>
+              <Picker style={styles.inputPicker}>
+                <Picker.Item label="Select Educational Level" value="" />
                 <Picker.Item label="High School" value="highschool" />
                 <Picker.Item label="ND" value="nd" />
                 <Picker.Item label="HND" value="hnd" />
@@ -131,11 +132,11 @@ export default function EmployeeForm() {
                 <Picker.Item label="Doctorate" value="doctorate" />
               </Picker>
             </View>
-            <Link href="/">
-              <Pressable style={styles.submitButton}>
-                <Text style={styles.submitButtonText}>Sign Up</Text>
-              </Pressable>
-            </Link>
+            <Pressable style={styles.submitButton}>
+              <Text style={styles.submitButtonText}>
+                <Link href="/#">Submit</Link>
+              </Text>
+            </Pressable>
           </Card.Content>
         </Card>
       </ScrollView>
@@ -161,8 +162,8 @@ const styles = StyleSheet.create({
   },
   header: {
     textAlign: "center",
-    fontSize: 30,
-    marginBottom: 10,
+    fontSize: 25,
+    marginBottom: 5,
     color: "#000",
     fontFamily: "PoppinsBold",
   },
@@ -170,26 +171,31 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     color: "#000",
-    marginBottom: 15,
+    marginBottom: 20,
     textTransform: "capitalize",
     fontFamily: "PoppinsMedium",
   },
   inputContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
   },
   label: {
-    fontSize: 16,
-    marginBottom: 8,
+    fontSize: 15,
+    margin: 5,
     color: "#000",
     fontFamily: "PoppinsLight",
   },
   input: {
     backgroundColor: "#fff",
     padding: 10,
-    borderColor: "#000",
-    borderWidth: 1,
-    borderRadius: 4,
+    borderWidth: 0.5,
+    borderRadius: 5,
     fontFamily: "PoppinsLight",
+  },
+  inputPicker: {
+    backgroundColor: "whitesmoke",
+    padding: 15,
+    borderWidth: 0.5,
+    borderRadius: 5,
   },
   submitButton: {
     width: "100%",
@@ -197,7 +203,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 13,
+    borderRadius: 10,
     marginTop: 10,
   },
   submitButtonText: {

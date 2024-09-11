@@ -21,11 +21,13 @@ export default function Login() {
           secureTextEntry={true}
           placeholderTextColor="#555"
         />
-        <Link href="/employees/employee-form">
-          <Pressable style={styles.loginButton}>
-            <Text style={styles.loginButtonText}>Login</Text>
-          </Pressable>
-        </Link>
+
+        <Pressable style={styles.loginButton}>
+          <Text style={styles.loginButtonText}>
+            <Link href="/employees/employee-form">Login</Link>
+          </Text>
+        </Pressable>
+
         <View>
           <Text style={styles.footerText}>
             Don't have an account?{" "}
@@ -50,12 +52,9 @@ const styles = StyleSheet.create({
     width: "100%",
     maxWidth: 500,
     backgroundColor: "ffff",
-    borderRadius: 12,
-    padding: 20,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
+    borderWidth: 0.5,
+    borderRadius: 10,
+    padding: 15,
   },
   header: {
     fontSize: 30,

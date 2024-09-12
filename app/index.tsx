@@ -26,7 +26,7 @@ export default function Home() {
       <View style={styles.homeButton}>
         <Pressable>
           <Text style={styles.homeButtonText}>
-            <Link href="/(tabs)/sign-up">Add Employee</Link>
+            <Link href="/(auth)/sign-up">Add Employee</Link>
           </Text>
         </Pressable>
 

@@ -14,7 +14,7 @@ export default function Home() {
       <Stack.Screen
         options={{
           title: "Welcome",
-          headerStyle: { backgroundColor: "#45484A" },
+          headerStyle: { backgroundColor: "black" },
           headerTintColor: "#fff",
           headerTitleStyle: {
             fontWeight: "bold",
@@ -48,9 +48,9 @@ const styles = StyleSheet.create({
   },
   headingText: {
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: "bold",
-    marginBottom: 15,
+    marginBottom: 10,
     fontFamily: "PoppinsBold",
   },
   subHeadingText: {

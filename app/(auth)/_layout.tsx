@@ -2,25 +2,25 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { Tabs } from "expo-router";
 
-export default function TabLayout() {
+export default function AuthLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: "red" }}>
       <Tabs.Screen
-        name="employeeForm"
+        name="sign-up"
         options={{
-          title: "Employee Form",
+          title: "Sign Up",
           tabBarIcon: ({ color }) => (
-            <AntDesign name="form" size={24} color="black" />
+            <FontAwesome name="sign-in" size={24} color="black" />
           ),
         }}
       />
 
       <Tabs.Screen
-        name="employeeDetails"
+        name="login"
         options={{
-          title: "Employee Details",
+          title: "Login",
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="home" size={24} color="black" />
+            <AntDesign name="login" size={24} color="black" />
           ),
         }}
       />

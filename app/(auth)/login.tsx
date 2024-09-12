@@ -24,7 +24,7 @@ export default function Login() {
 
         <Pressable style={styles.loginButton}>
           <Text style={styles.loginButtonText}>
-            <Link href="/employees/employee-form">Login</Link>
+            <Link href="/employee-form">Login</Link>
           </Text>
         </Pressable>
 

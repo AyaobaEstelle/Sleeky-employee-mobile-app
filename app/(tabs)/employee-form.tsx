@@ -8,7 +8,7 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { Button, Card, Title } from "react-native-paper";
+import { Card, Title } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
 import { Link } from "expo-router";
 

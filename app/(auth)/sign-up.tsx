@@ -1,129 +1,187 @@
+import { SafeAreaView, Text, TextInput, Pressable, View } from "react-native";
+import React, { useState } from "react";
+import FontSize from "@/constants/FontSize";
+import Colors from "@/constants/Colors";
+import Spacing from "@/constants/Spacing";
 import { Link } from "expo-router";
-import React from "react";
-import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-export default function SignUp() {
+type RootStackParamList = {
+  Signup: undefined;
+  Login: undefined;
+};
+
+type SignupProps = NativeStackScreenProps<RootStackParamList, "Signup">;
+
+export default function Signup({ navigation }: SignupProps) {
+  const [focused, setFocused] = useState<boolean>(false);
+
+  const [form, setForm] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (name: keyof typeof form, value: string) => {
+    setForm({ ...form, [name]: value });
+  };
   return (
-    <View style={styles.container}>
-      <View style={styles.card}>
-        <Text style={styles.header}>Sign Up</Text>
-        <Text style={styles.subHeader}>
-          Enter your information to create an account
-        </Text>
-        <View style={styles.inputRow}>
+    <SafeAreaView>
+      <View
+        style={{
+          padding: Spacing * 2,
+          backgroundColor: Colors.background,
+          height: "100%",
+          width: "100%",
+        }}
+      >
+        <View
+          style={{
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: FontSize.xLarge,
+              fontFamily: "PoppinsBold",
+              color: Colors.primary,
+              paddingTop: Spacing * 4,
+              paddingBottom: Spacing,
+              textTransform: "capitalize",
+            }}
+          >
+            Create account
+          </Text>
+          <Text
+            style={{
+              fontSize: FontSize.small,
+              fontFamily: "PoppinsLight",
+              textAlign: "center",
+              // textTransform: "capitalize",
+            }}
+          >
+            Create an account to view all employees
+          </Text>
+        </View>
+        <View
+          style={{
+            marginVertical: Spacing * 3,
+          }}
+        >
           <TextInput
-            style={styles.input}
-            placeholder="First Name"
-            placeholderTextColor="#555"
+            placeholder="Full name"
+            value={form.fullName}
+            onChangeText={(value) => handleChange("fullName", value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            placeholderTextColor={Colors.darkText}
+            style={[
+              {
+                fontSize: FontSize.small,
+                fontFamily: "PoppinsRegular",
+                padding: Spacing * 2,
+                backgroundColor: Colors.lightsecondary,
+                borderRadius: Spacing,
+                marginVertical: Spacing,
+              },
+              focused && {
+                borderWidth: 1.5,
+                borderColor: Colors.primary,
+              },
+            ]}
           />
           <TextInput
-            style={styles.input}
-            placeholder="Last Name"
-            placeholderTextColor="#555"
+            placeholder="Email"
+            value={form.email}
+            onChangeText={(value) => handleChange("email", value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            placeholderTextColor={Colors.darkText}
+            keyboardType="email-address"
+            style={[
+              {
+                fontSize: FontSize.small,
+                fontFamily: "PoppinsRegular",
+                padding: Spacing * 2,
+                backgroundColor: Colors.lightsecondary,
+                borderRadius: Spacing,
+                marginVertical: Spacing,
+              },
+              focused && {
+                borderWidth: 1.5,
+                borderColor: Colors.primary,
+              },
+            ]}
+          />
+          <TextInput
+            placeholder="Password"
+            value={form.password}
+            onChangeText={(value) => handleChange("password", value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            placeholderTextColor={Colors.darkText}
+            secureTextEntry={true}
+            style={[
+              {
+                fontSize: FontSize.small,
+                fontFamily: "PoppinsRegular",
+                padding: Spacing * 2,
+                backgroundColor: Colors.lightsecondary,
+                borderRadius: Spacing,
+                marginVertical: Spacing,
+              },
+              focused && {
+                borderWidth: 1.5,
+                borderColor: Colors.primary,
+              },
+            ]}
           />
         </View>
-        <TextInput
-          style={styles.inputFullWidth}
-          placeholder="sleeky@example.com"
-          placeholderTextColor="#555"
-        />
-        <TextInput
-          style={styles.inputFullWidth}
-          placeholder="********"
-          secureTextEntry={true}
-          placeholderTextColor="#555"
-        />
-        <Pressable style={styles.signUpButton}>
-          <Text style={styles.signUpButtonText}>Sign Up</Text>
+
+        <Pressable
+          style={{
+            padding: Spacing * 2,
+            backgroundColor: Colors.primary,
+            marginVertical: Spacing * 3,
+            borderRadius: Spacing,
+          }}
+        >
+          <Text
+            style={{
+              color: Colors.secondary,
+              textAlign: "center",
+              fontSize: FontSize.large,
+              fontFamily: "PoppinsBold",
+            }}
+          >
+            Sign up
+          </Text>
         </Pressable>
-        <View>
-          <Text style={styles.footerText}>
+        <Pressable
+          style={{
+            padding: Spacing,
+          }}
+        >
+          <Text
+            style={{
+              color: Colors.text,
+              textAlign: "center",
+              fontSize: FontSize.small,
+              fontFamily: "PoppinsLight",
+            }}
+          >
             Already have an account?{" "}
-            <Link href="/login" style={{ color: "blue" }}>
+            <Link
+              href="/login"
+              style={{
+                color: "blue",
+              }}
+            >
               Login
             </Link>
           </Text>
-        </View>
+        </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 20,
-  },
-  card: {
-    width: "100%",
-    maxWidth: 500,
-    backgroundColor: "ffff",
-    borderWidth: 0.5,
-    borderRadius: 10,
-    padding: 15,
-  },
-  header: {
-    fontWeight: "bold",
-    color: "#000",
-    textAlign: "center",
-    marginBottom: 15,
-    fontFamily: "PoppinsBold",
-    fontSize: 30,
-  },
-  subHeader: {
-    fontSize: 14,
-    color: "#000",
-    textAlign: "center",
-    marginBottom: 20,
-    fontFamily: "PoppinsMedium",
-  },
-  inputRow: {
-    flexDirection: "row",
-    gap: 10,
-    marginBottom: 15,
-  },
-  input: {
-    flex: 1,
-    height: 50,
-    width: "20%",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    color: "#000",
-    fontFamily: "PoppinsLight",
-  },
-  inputFullWidth: {
-    width: "100%",
-    height: 50,
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    color: "#000",
-    marginBottom: 15,
-    fontFamily: "PoppinsLight",
-  },
-  signUpButton: {
-    width: "100%",
-    height: 50,
-    backgroundColor: "#000",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 5,
-    marginBottom: 15,
-  },
-  signUpButtonText: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-    fontFamily: "PoppinsBold",
-  },
-  footerText: {
-    color: "#000",
-    textAlign: "center",
-    marginTop: 15,
-    fontFamily: "PoppinsLight",
-  },
-});

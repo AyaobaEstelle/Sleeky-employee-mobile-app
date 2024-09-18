@@ -11,17 +11,9 @@ import {
 import { Card, Title } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
 import { Link } from "expo-router";
-import axios from "axios";
 
 export default function EmployeeForm() {
   const [education, setEducation] = useState("");
-  const [employees, setEmployees] = useState("");
-  // useEffect(() => {
-  //   const url = "https://employee-management-api-xj3a.onrender.com/employees";
-  //   axios.get(url).then((response) => {
-  //     setEmployees(response.data);
-  //   });
-  // });
 
   return (
     <SafeAreaView style={styles.container}>

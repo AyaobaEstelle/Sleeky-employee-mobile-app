@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import {
   Pressable,
   SafeAreaView,
@@ -13,6 +13,8 @@ import { Picker } from "@react-native-picker/picker";
 import { Link } from "expo-router";
 
 export default function EmployeeForm() {
+  const [education, setEducation] = useState("");
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -122,8 +124,13 @@ export default function EmployeeForm() {
             </View>
             <View style={styles.inputContainer}>
               <Text style={styles.label}>Educational Level</Text>
-              <Picker style={styles.inputPicker}>
-                <Picker.Item label="Select Educational Level" value="" />
+              <Picker
+                style={styles.inputPicker}
+                selectedValue={education}
+                onValueChange={(currentEducation) =>
+                  setEducation(currentEducation)
+                }
+              >
                 <Picker.Item label="High School" value="highschool" />
                 <Picker.Item label="ND" value="nd" />
                 <Picker.Item label="HND" value="hnd" />

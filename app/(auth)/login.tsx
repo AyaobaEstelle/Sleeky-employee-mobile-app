@@ -1,106 +1,152 @@
+import {
+  Pressable,
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+} from "react-native";
+import React, { useState } from "react";
+import Spacing from "@/constants/Spacing";
+import FontSize from "@/constants/FontSize";
+import Colors from "@/constants/Colors";
 import { Link } from "expo-router";
-import React from "react";
-import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
 
 export default function Login() {
+  const [focused, setFocused] = useState<boolean>(false);
+
   return (
-    <View style={styles.container}>
-      <View style={styles.card}>
-        <Text style={styles.header}>Login</Text>
-        <Text style={styles.subHeader}>
-          Enter your information to log into your account
-        </Text>
-        <TextInput
-          style={styles.input}
-          placeholder="sleeky@example.com"
-          placeholderTextColor="#555"
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="*********"
-          secureTextEntry={true}
-          placeholderTextColor="#555"
-        />
-
-        <Pressable style={styles.loginButton}>
-          <Text style={styles.loginButtonText}>
-            <Link href="/employee-form">Login</Link>
+    <SafeAreaView>
+      <View
+        style={{
+          padding: Spacing * 2,
+          backgroundColor: Colors.background,
+          height: "100%",
+          width: "100%",
+        }}
+      >
+        <View
+          style={{
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: FontSize.xxLarge,
+              fontFamily: "PoppinsBold",
+              color: Colors.primary,
+              paddingTop: Spacing * 4,
+              paddingBottom: Spacing,
+              textTransform: "capitalize",
+            }}
+          >
+            Login here
           </Text>
-        </Pressable>
-
-        <View>
-          <Text style={styles.footerText}>
-            Don't have an account?{" "}
-            <Link href="/sign-up" style={{ color: "blue" }}>
-              Sign Up
-            </Link>
+          <Text
+            style={{
+              fontSize: FontSize.large,
+              fontFamily: "PoppinsLight",
+              textAlign: "center",
+            }}
+          >
+            Welcome back!
           </Text>
         </View>
+        <View
+          style={{
+            marginVertical: Spacing * 4,
+          }}
+        >
+          <TextInput
+            placeholder="Email"
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            placeholderTextColor={Colors.darkText}
+            keyboardType="email-address"
+            style={[
+              {
+                fontSize: FontSize.small,
+                fontFamily: "PoppinsRegular",
+                padding: Spacing * 2,
+                backgroundColor: Colors.lightsecondary,
+                borderRadius: Spacing,
+                marginVertical: Spacing,
+              },
+              focused && {
+                borderWidth: 1.5,
+                borderColor: Colors.primary,
+              },
+            ]}
+          />
+          <TextInput
+            placeholder="Password"
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            placeholderTextColor={Colors.darkText}
+            secureTextEntry={true}
+            style={[
+              {
+                fontSize: FontSize.small,
+                fontFamily: "PoppinsRegular",
+                padding: Spacing * 2,
+                backgroundColor: Colors.lightsecondary,
+                borderRadius: Spacing,
+                marginVertical: Spacing,
+              },
+              focused && {
+                borderWidth: 1.5,
+                borderColor: Colors.primary,
+              },
+            ]}
+          />
+        </View>
+        <Pressable
+          style={{
+            padding: Spacing * 2,
+            backgroundColor: Colors.primary,
+            marginVertical: Spacing * 3,
+            borderRadius: Spacing,
+          }}
+        >
+          <Text
+            style={{
+              color: Colors.secondary,
+              fontFamily: "PoppinsBold",
+              textAlign: "center",
+              fontSize: FontSize.large,
+            }}
+          >
+            <Link href="/(tabs)/employee-form">Login</Link>
+          </Text>
+        </Pressable>
+        <Pressable
+          style={{
+            padding: Spacing,
+          }}
+        >
+          <Text
+            style={{
+              color: Colors.text,
+              textAlign: "center",
+              fontSize: FontSize.small,
+              fontFamily: "PoppinsLight",
+            }}
+          >
+            Create new account{" "}
+            <Link
+              href="/sign-up"
+              style={{
+                color: "blue",
+                textDecorationLine: "underline",
+              }}
+            >
+              here
+            </Link>
+          </Text>
+        </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 20,
-  },
-  card: {
-    width: "100%",
-    maxWidth: 500,
-    backgroundColor: "ffff",
-    borderWidth: 0.5,
-    borderRadius: 10,
-    padding: 15,
-  },
-  header: {
-    fontSize: 30,
-    fontWeight: "bold",
-    fontFamily: "PoppinsBold",
-    color: "#000",
-    textAlign: "center",
-    marginBottom: 15,
-  },
-  subHeader: {
-    fontSize: 14,
-    color: "#000",
-    textAlign: "center",
-    marginBottom: 20,
-    fontFamily: "PoppinsMedium",
-  },
-  input: {
-    width: "100%",
-    height: 50,
-    borderColor: "#000",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    color: "#000",
-    marginBottom: 15,
-    fontFamily: "PoppinsLight",
-  },
-  loginButton: {
-    width: "100%",
-    height: 50,
-    backgroundColor: "#000",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 5,
-    marginBottom: 15,
-  },
-  loginButtonText: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-    fontFamily: "PoppinsBold",
-  },
-  footerText: {
-    color: "#000",
-    textAlign: "center",
-    marginTop: 15,
-    fontFamily: "PoppinsLight",
-  },
-});
+
+const styles = StyleSheet.create({});

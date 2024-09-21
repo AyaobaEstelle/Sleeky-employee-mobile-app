@@ -124,7 +124,6 @@ const styles = StyleSheet.create({
     padding: Spacing * 2,
     backgroundColor: Colors.background,
     height: "100%",
-    width: "100%",
   },
   headerView: {
     alignItems: "center",

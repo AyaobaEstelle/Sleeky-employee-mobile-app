@@ -6,6 +6,7 @@ const TabLayout = () => {
     <>
       <Stack>
         <Stack.Screen name="employee-form" options={{ headerShown: false }} />
+        <Stack.Screen name="welcome" options={{ headerShown: false }} />
         <Stack.Screen
           name="employee-details"
           options={{ headerShown: false }}

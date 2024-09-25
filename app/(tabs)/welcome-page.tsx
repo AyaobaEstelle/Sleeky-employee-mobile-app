@@ -1,4 +1,4 @@
-import { Link, Stack, useNavigation } from "expo-router";
+import { Link, useNavigation } from "expo-router";
 import {
   Text,
   View,
@@ -12,21 +12,38 @@ import Spacing from "@/constants/Spacing";
 import FontSize from "@/constants/FontSize";
 import Colors from "@/constants/Colors";
 import { useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { NavigationProp } from "@react-navigation/native";
 
-export default function HomePage() {
-  const navigation = useNavigation();
+export default function WelcomePage() {
+  const navigation = useNavigation<NavigationProp<any>>();
 
   useEffect(() => {
     navigation.setOptions({ headerShown: false });
   }, [navigation]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      handleGetToken();
+    }, 2000);
+  });
+
+  const handleGetToken = async () => {
+    const dataToken = await AsyncStorage.getItem("AccessToken");
+    console.log("🚀 ~ handleGetToken ~ dataToken:", dataToken);
+    if (!dataToken) {
+      navigation.navigate("login");
+    } else {
+      navigation.navigate("(tabs)", { screen: "welcome-page" });
+    }
+  };
   return (
     <SafeAreaView>
       <View style={styles.container}>
         <ImageBackground
           style={{ height: Dimensions.get("window").height / 2 }}
           resizeMode="contain"
-          source={require("../assets/images/welcome-img1.jpg")}
+          source={require("../../assets/images/welcome-img1.jpg")}
         />
         <View>
           <View style={styles.content}>
@@ -38,12 +55,12 @@ export default function HomePage() {
           <View style={styles.buttonView}>
             <Pressable style={styles.buttonInput}>
               <Text style={styles.buttonInputText}>
-                <Link href="/sign-up">Sign Up</Link>
+                <Link href="/(tabs)/employee-form">Add Employee</Link>
               </Text>
             </Pressable>
             <Pressable style={styles.buttonInput}>
               <Text style={styles.buttonInputText}>
-                <Link href="/login">Login</Link>
+                <Link href="/">View Employees</Link>
               </Text>
             </Pressable>
           </View>

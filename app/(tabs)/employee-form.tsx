@@ -12,6 +12,9 @@ import { Card, Title } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
 import { Link } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Colors from "@/constants/Colors";
+import Spacing from "@/constants/Spacing";
+import FontSize from "@/constants/FontSize";
 
 export default function EmployeeForm() {
   const [education, setEducation] = useState("");
@@ -35,7 +38,7 @@ export default function EmployeeForm() {
         <Card style={styles.card}>
           <Card.Content>
             <Title style={styles.header}>Sleeky Programmers</Title>
-            <Text style={styles.subheading}>employee biodata</Text>
+            <Text style={styles.subheading}>employee form</Text>
             <View style={styles.inputContainer}>
               <Text style={styles.label}>First Name</Text>
               <TextInput style={styles.input} placeholder="Enter first name" />
@@ -169,68 +172,81 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    backgroundColor: "#fff",
   },
   scrollContainer: {
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
   },
   card: {
     width: "100%",
-    padding: 10,
-    backgroundColor: "#fff",
+    backgroundColor: Colors.background,
   },
   header: {
     textAlign: "center",
     fontSize: 25,
     marginBottom: 5,
-    color: "#000",
-    fontFamily: "PoppinsBold",
+    color: Colors.primary,
+    fontFamily: "PlayFairBlack",
   },
   subheading: {
     textAlign: "center",
     fontSize: 20,
-    color: "#000",
+    color: Colors.darkText,
     marginBottom: 20,
     textTransform: "capitalize",
-    fontFamily: "PoppinsMedium",
+    fontFamily: "layFairBlack",
   },
   inputContainer: {
     marginBottom: 10,
   },
   label: {
-    fontSize: 15,
-    margin: 5,
-    color: "#000",
-    fontFamily: "PoppinsLight",
+    marginBottom: 1,
+    fontSize: FontSize.medium,
+    fontFamily: "PlayFairBold",
+    color: Colors.primary,
+    marginHorizontal: 2,
   },
   input: {
-    backgroundColor: "#fff",
-    padding: 10,
-    borderWidth: 0.5,
-    borderRadius: 5,
-    fontFamily: "PoppinsLight",
+    fontSize: FontSize.small,
+    fontFamily: "PlayFairRegular",
+    color: Colors.darkText,
+    padding: Spacing * 2,
+    backgroundColor: Colors.lightsecondary,
+    marginVertical: Spacing,
   },
   inputPicker: {
-    backgroundColor: "whitesmoke",
-    padding: 15,
-    borderWidth: 0.5,
-    borderRadius: 5,
+    fontSize: FontSize.small,
+    fontFamily: "PlayFairRegular",
+    color: Colors.darkText,
+    padding: Spacing,
+    backgroundColor: Colors.lightsecondary,
+    marginVertical: Spacing,
   },
+
   submitButton: {
-    width: "100%",
-    height: 50,
-    backgroundColor: "#000",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 10,
-    marginTop: 10,
+    padding: Spacing,
+    backgroundColor: Colors.primary,
+    // marginVertical: Spacing * 3,
   },
   submitButtonText: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
+    color: Colors.secondary,
     fontFamily: "PoppinsBold",
+    textAlign: "center",
+    fontSize: FontSize.large,
   },
+  // submitButton: {
+  //   width: "100%",
+  //   height: 50,
+  //   backgroundColor: "#000",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   borderRadius: 10,
+  //   marginTop: 10,
+  // },
+  // submitButtonText: {
+  //   color: "#fff",
+  //   fontSize: 20,
+  //   fontWeight: "bold",
+  //   fontFamily: "PoppinsBold",
+  // },
 });

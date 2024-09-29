@@ -11,9 +11,23 @@ import {
 import { Card, Title } from "react-native-paper";
 import { Picker } from "@react-native-picker/picker";
 import { Link } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function EmployeeForm() {
   const [education, setEducation] = useState("");
+  const [token, setToken] = useState<string | null>("");
+  const fetchToken = async () => {
+    try {
+      const fetchedToken = await AsyncStorage.getItem("token");
+      console.log("🚀 ~ fetchToken ~ fetchedToken:", fetchedToken);
+      setToken(fetchedToken);
+    } catch (error) {
+      console.error("Error fetching token:", error);
+    }
+  };
+  useEffect(() => {
+    fetchToken();
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>

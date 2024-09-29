@@ -7,11 +7,14 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
+    PlayFairBold: require("../assets/fonts/PlayFair-Display.Bold.ttf"),
+    PlayFairBlack: require("../assets/fonts/PlayFair-Display.Black.ttf"),
+    PlayFairRegular: require("../assets/fonts/PlayFair-Display.Regular.ttf"),
+    PlayFairItalic: require("../assets/fonts/PlayFair-Display.Italic.ttf"),
     PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
     PoppinsRegular: require("../assets/fonts/Poppins-Regular.ttf"),
     PoppinsMedium: require("../assets/fonts/Poppins-Medium.ttf"),
     PoppinsLight: require("../assets/fonts/Poppins-Light.ttf"),
-    InterBold: require("../assets/fonts/Inter-Bold.ttf"),
   });
 
   useEffect(() => {

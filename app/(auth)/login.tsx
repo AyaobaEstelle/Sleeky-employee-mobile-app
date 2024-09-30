@@ -14,15 +14,6 @@ import Colors from "@/constants/Colors";
 import { Link, useNavigation } from "expo-router";
 import axios from "axios";
 import { NavigationProp } from "@react-navigation/native";
-<<<<<<< Updated upstream
-=======
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
-interface Iform {
-  email?: string;
-  password?: string;
-}
->>>>>>> Stashed changes
 
 export default function Login() {
   const navigation = useNavigation<NavigationProp<any>>();
@@ -30,7 +21,6 @@ export default function Login() {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState<string | undefined>();
 
-<<<<<<< Updated upstream
   const handleLogin = (credentials: { email: string; password: string }) => {
     const url = "https://employee-management-api-xj3a.onrender.com/auth/login";
 
@@ -54,64 +44,6 @@ export default function Login() {
   const handleMessage = (message: string, type = "FAILED") => {
     setMessage((prevMessage) => message);
     setMessageType(type);
-=======
-  const handleShowToast = () => {
-    setShowToast(true);
-    setTimeout(() => {
-      setShowToast(false);
-    }, toastDuration);
-  };
-
-  const handleToastPress = () => {
-    setShowToast(false);
-  };
-
-  useEffect(() => {
-    if (toastMessage) {
-      handleShowToast();
-    }
-  }, [toastMessage]);
-
-  const validateForm = () => {
-    let formErrors = {} as Iform;
-    if (!form.email) formErrors.email = "Invalid email";
-    else if (!/\S+@\S+\.\S+/.test(form.email))
-      formErrors.email = "Invalid email";
-
-    if (!form.password) formErrors.password = "Invalid password";
-    else if (form.password.length < 6)
-      formErrors.password = "Password must be at least 6 characters";
-
-    setErrors(formErrors);
-    return Object.keys(formErrors).length === 0;
-  };
-
-  const submit = async () => {
-    if (validateForm()) {
-      setIsLoading(true);
-      try {
-        const response = await axios.post(
-          "https://employee-management-api-xj3a.onrender.com/auth/login",
-          form
-        );
-        const result = response.data;
-        const a = await AsyncStorage.setItem("token", result.accessToken);
-        console.log("🚀 ~ submit ~ a:", a);
-        router.push("/(tabs)/welcome-page");
-      } catch (error) {
-        setError("Failed to create account");
-      } finally {
-        setIsLoading(false);
-        setToastMessage("Account does not exist");
-      }
-    } else {
-      console.log("form is invalid");
-    }
-  };
-
-  const handleChange = (name: keyof typeof form, value: string) => {
-    setForm({ ...form, [name]: value });
->>>>>>> Stashed changes
   };
 
   return (

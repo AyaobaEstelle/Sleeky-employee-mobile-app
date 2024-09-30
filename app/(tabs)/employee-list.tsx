@@ -49,9 +49,11 @@ export default function EmployeeList() {
                     </Text>
                     <Pressable style={styles.button}>
                       <Text style={styles.buttonText}>
-                        {/* <Link href="/(tabs)/employee-details">
-                          View Employees
-                        </Link> */}
+                        <Link
+                          href={`/employee/${employee._id}` }
+                        >
+                          View Employee Details
+                        </Link>
                       </Text>
                     </Pressable>
                   </View>

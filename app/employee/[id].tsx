@@ -11,7 +11,7 @@ import SingleEmployee from "@/components/SingleEmployee";
 const Index = () => {
   const pathname = useLocalSearchParams();
 
-  const { data, isLoading } = useSWR(
+  const { data, isLoading,error } = useSWR(
     // Fetch individual employee
     "https://employee-management-api-xj3a.onrender.com/employees/" +
       pathname.id,
@@ -25,6 +25,12 @@ const Index = () => {
 
       return data?.data as Employee;
     }
+  );
+  if(error)
+    return (
+    <View>
+      <Text>Error, Can't View Employee Detail...</Text>
+    </View>
   );
   if (isLoading)
     return (

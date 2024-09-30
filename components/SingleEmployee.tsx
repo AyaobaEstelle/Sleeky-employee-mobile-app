@@ -48,13 +48,16 @@ export default function SingleEmployee({
 
       //   Update Employee Details
       if (data?.arg?.type == "update") {
-        return await axios.put(url, data?.arg, {
+        const res =  await axios.put(url, data?.arg, {
           headers: {
             Authorization: "Bearer " + access_token,
           },
         });
+
+        Toast.show("Employee Details Updated Successfully");
+        return res;
       }
-      //   Delete Employee Details
+
       const res = await axios.delete(url, {
         headers: {
           Authorization: "Bearer " + access_token,
@@ -62,16 +65,13 @@ export default function SingleEmployee({
       });
 
       Toast.show(
-        data.arg.type === "delete"
-          ? "Employee Details Updated Successfully"
-          : "Employee Details Deleted Successfully",
+        "Employee Details Deleted Successfully",
         {
           onHidden() {
-            data.arg.type == "delete" && router.push("/employee-list");
+            router.push("/employee-list");
           },
         }
       );
-      router.push("/employee-list");
       return res;
     }
   );

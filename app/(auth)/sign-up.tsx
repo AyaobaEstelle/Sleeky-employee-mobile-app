@@ -5,7 +5,6 @@ import {
   Pressable,
   View,
   StyleSheet,
-  Button,
 } from "react-native";
 import React, { useState } from "react";
 import FontSize from "@/constants/FontSize";
@@ -183,7 +182,6 @@ export default function Signup({ navigation }: SignupProps) {
             </Link>
           </Text>
         </Pressable>
-        {/* <Button onPress={getUser} title="sign up" /> */}
       </View>
     </SafeAreaView>
   );

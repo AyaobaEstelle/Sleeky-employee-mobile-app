@@ -1,7 +1,8 @@
-import { router, Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import { useEffect, useState } from "react";
 import { useFonts } from "expo-font";
+import { Stack } from "expo-router";
+import { RootSiblingParent } from 'react-native-root-siblings';
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -31,6 +32,7 @@ export default function RootLayout() {
   }, [loaded]);
 
   return (
+    <RootSiblingParent>
     <Stack
       screenOptions={{
         headerStyle: {
@@ -46,5 +48,6 @@ export default function RootLayout() {
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
+    </RootSiblingParent>
   );
 }
